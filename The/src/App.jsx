@@ -7,14 +7,15 @@ function App() {
 
 
   return (
-    <div>
-      <Navbar />
+ 
+
     <div className="container mt-5">
+      <Navbar />
       <TransactionalTable />
    
-      <button className="btn btn-primary">Add Transaction </button>
+      <button className="btn btn-primary">Add New Transaction </button>
     </div>
-    </div>
+  
 
   );
 
