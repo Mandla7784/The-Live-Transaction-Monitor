@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import mockTransactions from './mockData';
 import TotalProcessed from './TotalProcessed';
 import { useEffect , useState } from 'react';
+import { SearchContext } from './SearchProvider';
 
 const api_URL_endpoint  = 'https://jsonplaceholder.typicode.com/posts';
 console.log(mockTransactions);
 
 
-function TransactionalTable() {
+function TransactionalTable( { data } ) {
+  const {query } = useContext(SearchContext)
   const [transactions, setTransactions] = useState([]);
   const totalProcessed = transactions.filter(tx => tx.status === 'completed').length;
   const [errorMessage , setErrorMessage] = useState('');
@@ -19,17 +21,19 @@ useEffect(()=> {
   async function  fetchData() {
     const response = await fetch(api_URL_endpoint);
 
-
     if(response.status == 200) {
           const data = await response.json();
-          const transformed = data.splice(0,10).map(item => ({
+          const transformedAndFiltered = data.splice(0,10).map(item => ({
+            id: item.id.toLocaleString().include(query) ? item.id : null,
           date: new Date(),
           otherParty: item.title.slice(0,20),
           amount: Math.floor(Math.random() * 1000),
           status: ['pending', 'completed', 'failed'][Math.floor(Math.random() * 3)]
     }));
+
+
     
-    setTransactions(transformed);
+    setTransactions(transformedAndFiltered);
     }else{
       setErrorMessage(`Failed to fetch transactions. Connection Lost.${response.status}`);
        
