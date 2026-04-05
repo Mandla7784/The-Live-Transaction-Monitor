@@ -1,4 +1,10 @@
  const mockTransactions = [
+     {
+    date: new Date("2026-02-01"),
+    otherParty: "King Dyonase",
+    amount: 200,
+    status: "completed"
+  },
   {
     date: new Date("2022-01-01"),
     otherParty: "John Doe",
@@ -23,6 +29,7 @@
     amount: 200,
     status: "completed"
   },
+
 ];
 
 export default mockTransactions
