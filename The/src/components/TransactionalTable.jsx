@@ -6,14 +6,13 @@ console.log(mockTransactions);
 
 function TransactionalTable() {
 
- const totalProcessed = mockTransactions.filter(tx => tx.status === 'processed').length;
-       console.log(totalProcessed); 
+
 
 
   return (
     <div>
       <h2>Transactional Table</h2>
-      <h3>Total Processed: <span className='bg-green'>{totalProcessed}</span> </h3>
+      <h3>Total Processed: <span className='bg-green'>0</span> </h3>
      
 
 
