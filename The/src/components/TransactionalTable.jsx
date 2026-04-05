@@ -13,7 +13,7 @@ function TransactionalTable() {
   return (
     <div>
       <h2>Transactional Table</h2>
-      <h3>Total Processed </h3>
+      <h3>Total Processed: <span className='bg-green'>{totalProcessed}</span> </h3>
      
 
 
