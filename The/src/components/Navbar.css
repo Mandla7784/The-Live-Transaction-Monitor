@@ -1,5 +1,5 @@
 .dribbble-navbar {
-  background-color: #fff;
+  background-color: #0f0e0e;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 1rem 2rem;
   display: flex;
@@ -12,7 +12,7 @@
 
 .dribbble-navbar .navbar-brand {
   font-weight: bold;
-  color: #333;
+  color: #f2f2f2;
   font-size: 1.5rem;
 }
 
@@ -28,14 +28,14 @@
 }
 
 .dribbble-navbar .nav-links a {
-  color: #333;
+  color: #f2f2f2;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
 }
 
 .dribbble-navbar .nav-links a:hover {
-  color: #007bff;
+  color: #2a2b2d;
 }
 
 .dribbble-navbar .navbar-right {
@@ -53,7 +53,7 @@
 
 .dribbble-navbar .theme-toggle:hover,
 .dribbble-navbar .user-icon:hover {
-  color: #007bff;
+  color: #2a2b2d;
 }
 
 /* Dark theme overrides */
@@ -72,7 +72,7 @@
 [data-bs-theme="dark"] .dribbble-navbar .nav-links a:hover,
 [data-bs-theme="dark"] .dribbble-navbar .user-icon:hover,
 [data-bs-theme="dark"] .dribbble-navbar .theme-toggle:hover {
-  color: #007bff;
+    color: #2a2b2d;
 }
 
 /* Responsive */

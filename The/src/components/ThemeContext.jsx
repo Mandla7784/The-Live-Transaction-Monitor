@@ -5,14 +5,10 @@ const ThemeContext = createContext();
 export const useTheme = () => useContext(ThemeContext);
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState('light');
-
-  useEffect(() => {
+  const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      setTheme(savedTheme);
-    }
-  }, []);
+    return savedTheme || 'light';
+  });
 
   useEffect(() => {
     document.documentElement.setAttribute('data-bs-theme', theme);
