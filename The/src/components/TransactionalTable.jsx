@@ -1,4 +1,8 @@
 import React from 'react';
+
+
+
+
 import mockTransactions from './mockData';
 
 console.log(mockTransactions);
@@ -25,7 +29,7 @@ function TransactionalTable() {
               <td>{transaction.otherParty}</td>
               <td>{transaction.amount}</td>
               <td>
-                <span className={`badge badge-${transaction.status === 'pending' ? 'warning' : transaction.status === 'completed' ? 'success' : 'danger'}`}>
+                <span className={`badge text-${transaction.status === 'pending' ? 'warning' : transaction.status === 'completed' ? 'success' : 'danger'}`}>
                   {transaction.status}
                 </span>
               
