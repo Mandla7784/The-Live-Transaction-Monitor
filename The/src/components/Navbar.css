@@ -1,0 +1,92 @@
+.dribbble-navbar {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.dribbble-navbar .navbar-brand {
+  font-weight: bold;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.dribbble-navbar .nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dribbble-navbar .nav-links li {
+  margin: 0 1rem;
+}
+
+.dribbble-navbar .nav-links a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.dribbble-navbar .nav-links a:hover {
+  color: #007bff;
+}
+
+.dribbble-navbar .navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.dribbble-navbar .user-icon,
+.dribbble-navbar .theme-toggle {
+  margin-left: 1rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.dribbble-navbar .theme-toggle:hover,
+.dribbble-navbar .user-icon:hover {
+  color: #007bff;
+}
+
+/* Dark theme overrides */
+[data-bs-theme="dark"] .dribbble-navbar {
+  background-color: #1a1a1a;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+[data-bs-theme="dark"] .dribbble-navbar .navbar-brand,
+[data-bs-theme="dark"] .dribbble-navbar .nav-links a,
+[data-bs-theme="dark"] .dribbble-navbar .user-icon,
+[data-bs-theme="dark"] .dribbble-navbar .theme-toggle {
+  color: #fff;
+}
+
+[data-bs-theme="dark"] .dribbble-navbar .nav-links a:hover,
+[data-bs-theme="dark"] .dribbble-navbar .user-icon:hover,
+[data-bs-theme="dark"] .dribbble-navbar .theme-toggle:hover {
+  color: #007bff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dribbble-navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .dribbble-navbar .nav-links {
+    margin-top: 1rem;
+  }
+
+  .dribbble-navbar .navbar-right {
+    margin-top: 1rem;
+  }
+}
