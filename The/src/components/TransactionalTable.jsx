@@ -13,13 +13,7 @@ function TransactionalTable() {
     <div>
       <h2>Transactional Table</h2>
       <h3>Total Processed: <span className='bg-green'>0</span> </h3>
-     
-
-
-
-
-
-      
+    
       <table className="table">
         <thead>
           <tr>
