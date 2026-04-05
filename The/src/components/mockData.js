@@ -17,6 +17,12 @@
     amount: 300,
     status: "failed"
   },
+  {
+    date: new Date("2026-02-01"),
+    otherParty: "Mandla Dyonase",
+    amount: 200,
+    status: "completed"
+  },
 ];
 
 export default mockTransactions
