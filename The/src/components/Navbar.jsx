@@ -10,6 +10,11 @@ function Navbar(){
     return (
         <nav className="dribbble-navbar">
             <a className="navbar-brand" href="#">Transaction Monitor</a>
+            
+
+            
+
+
             <ul className="nav-links">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Revenue</a></li>
