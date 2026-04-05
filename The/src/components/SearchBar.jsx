@@ -1,15 +1,17 @@
 import { useContext } from "react";
 import { SearchContext } from  "./SearchProvider";
 const SearchBar = () => {
-  const { query, setQuery } = useContext(SearchContext);
+  const { searchTerm: query, setSearchTerm: setQuery } = useContext(SearchContext);
 
   return (
-    <input
+    <div className="search-bar">
+          <input 
       type="text"
       placeholder="Search transactions..."
       value={query}
       onChange={(e) => setQuery(e.target.value)}
     />
+    </div>
   );
 };
 
