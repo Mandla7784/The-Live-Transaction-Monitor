@@ -24,7 +24,15 @@ function TransactionalTable() {
               <td>{transaction.date.toLocaleDateString()}</td>
               <td>{transaction.otherParty}</td>
               <td>{transaction.amount}</td>
-              <td>{transaction.status}</td>
+              <td>
+                <span className={`badge badge-${transaction.status === 'pending' ? 'warning' : transaction.status === 'completed' ? 'success' : 'danger'}`}>
+                  {transaction.status}
+                </span>
+              
+
+
+
+              </td>
             </tr>
           ))}
         </tbody>
