@@ -12,6 +12,15 @@ useEffect(()=> {
     const data = await response.json();
     console.log(data);
 
+    const transformed = data.splice(0,20).map(item => ({
+      date: new Date(),
+      otherParty: item.title,
+      amount: Math.floor(Math.random() * 1000),
+      status: ['pending', 'completed', 'failed'][Math.floor(Math.random() * 3)]
+    }));
+
+    console.log(transformed);
+
     
   }
 })
