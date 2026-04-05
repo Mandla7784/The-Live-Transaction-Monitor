@@ -4,11 +4,7 @@ import TotalProcessed from './TotalProcessed';
 import { useEffect , useState } from 'react';
 
 const api_URL_endpoint  = 'https://jsonplaceholder.typicode.com/posts';
-
-
 console.log(mockTransactions);
-
-
 function TransactionalTable() {
   const [transactions, setTransactions] = useState([]);
   const totalProcessed = transactions.filter(tx => tx.status === 'completed').length;
@@ -19,6 +15,7 @@ useEffect(()=> {
   async function  fetchData() {
     const response = await fetch(api_URL_endpoint);
     const data = await response.json();
+    console.log('Fetched Data:', data);
     console.log(data);
 
     const transformed = data.splice(0,20).map(item => ({
@@ -35,14 +32,6 @@ useEffect(()=> {
   }
   fetchData();
 } , [])
-
-
-
-
-
-
-
-
 
 
 
