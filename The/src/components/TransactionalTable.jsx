@@ -9,9 +9,6 @@ function TransactionalTable() {
     const transactions = mockTransactions;
     const totalProcessed = transactions.filter(tx => tx.status === 'completed').length;
 
-
-
-
   return (
     <div>
       <h2>Transactional Table</h2>

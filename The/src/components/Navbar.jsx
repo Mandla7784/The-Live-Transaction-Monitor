@@ -12,13 +12,23 @@ function Navbar(){
             <a className="navbar-brand" href="#">Transaction Monitor</a>
             
 
-            
+
 
 
             <ul className="nav-links">
-                <li><a href="#">Home</a></li>
+                <li><a href="#">Analysis </a></li>
                 <li><a href="#">Revenue</a></li>
-                <li><a href="#">Pricing</a></li>
+                 
+              <div className="search-container">
+                    <i className="bi bi-search search-icon"></i>
+                    <input
+                        type="text"
+                        className="search-bar"
+                        placeholder="Search transactions..."
+                    />
+                    </div>
+
+
             </ul>
             <div className="navbar-right">
                 <FaUser className="user-icon" />
