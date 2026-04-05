@@ -1,10 +1,13 @@
 import React from 'react';
 import mockTransactions from './mockData';
-
+import TotalProcessed from './TotalProcessed';
 console.log(mockTransactions);
 
 
 function TransactionalTable() {
+
+    const transactions = mockTransactions;
+    const totalProcessed = transactions.filter(tx => tx.status === 'completed').length;
 
 
 
@@ -12,7 +15,8 @@ function TransactionalTable() {
   return (
     <div>
       <h2>Transactional Table</h2>
-      <h3>Total Processed: <span className='bg-green'>0</span> </h3>
+      <h3>Total Processed: <span className='bg-green'>{totalProcessed}</span> </h3>
+
     
       <table className="table">
         <thead>
@@ -40,6 +44,16 @@ function TransactionalTable() {
           ))}
         </tbody>
       </table>
+<div className="container mt-5">
+      <div className="row">
+        <div className="col-md-4">
+          <TotalProcessed transactions={transactions} />
+        </div>
+      </div>
+    </div>
+
+
+
     </div>
   );
 }

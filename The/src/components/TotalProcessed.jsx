@@ -5,7 +5,7 @@ import React from 'react';
 function  TotalProcessed( {transactions}){
 
 
- const totalProcessed = transactions.filter(tx => tx.status === 'processed').length;
+ const totalProcessed = transactions.filter(tx => tx.status === 'completed').length;
        console.log(totalProcessed); 
 
        return (
