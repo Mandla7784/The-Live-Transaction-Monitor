@@ -3,7 +3,7 @@ import mockTransactions from './mockData';
 import TotalProcessed from './TotalProcessed';
 import { useEffect , useState } from 'react';
 
-const api_URL_endpoint  = 'https://jsonplaceholder.typicode.com/post';
+const api_URL_endpoint  = 'https://jsonplaceholder.typicode.com/posts';
 console.log(mockTransactions);
 
 
@@ -18,6 +18,8 @@ useEffect(()=> {
 
   async function  fetchData() {
     const response = await fetch(api_URL_endpoint);
+
+
     if(response.status == 200) {
           const data = await response.json();
           const transformed = data.splice(0,10).map(item => ({
@@ -29,7 +31,7 @@ useEffect(()=> {
     
     setTransactions(transformed);
     }else{
-      setErrorMessage('Failed to fetch transactions. Connection Lost.');
+      setErrorMessage(`Failed to fetch transactions. Connection Lost.${response.status}`);
        
       return;
     }
