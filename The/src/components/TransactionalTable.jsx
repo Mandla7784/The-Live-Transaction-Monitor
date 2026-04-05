@@ -5,7 +5,16 @@ import { useEffect } from 'react';
 
 const api_URL_endpoint  = 'https://jsonplaceholder.typicode.com/posts';
 
+useEffect(()=> {
 
+  async function  fetchData() {
+    const response = await fetch(api_URL_endpoint);
+    const data = await response.json();
+    console.log(data);
+
+    
+  }
+})
 
 
 
