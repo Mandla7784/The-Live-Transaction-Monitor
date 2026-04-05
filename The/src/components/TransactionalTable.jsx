@@ -1,9 +1,10 @@
 import React from 'react';
 import mockTransactions from './mockData';
 import TotalProcessed from './TotalProcessed';
-import { useEffect } from 'react';
+import { useEffect , useState } from 'react';
 
 const api_URL_endpoint  = 'https://jsonplaceholder.typicode.com/posts';
+const [transactions, setTransactions] = useState([]);
 
 useEffect(()=> {
 
@@ -20,10 +21,11 @@ useEffect(()=> {
     }));
 
     console.log(transformed);
+    setTransactions(transformed);
 
     
   }
-})
+} , [])
 
 
 
