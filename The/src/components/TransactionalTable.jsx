@@ -3,27 +3,36 @@ import mockTransactions from './mockData';
 import TotalProcessed from './TotalProcessed';
 import { useEffect , useState } from 'react';
 
-const api_URL_endpoint  = 'https://jsonplaceholder.typicode.com/posts';
+const api_URL_endpoint  = 'https://jsonplaceholder.typicode.com/post';
 console.log(mockTransactions);
+
+
 function TransactionalTable() {
   const [transactions, setTransactions] = useState([]);
   const totalProcessed = transactions.filter(tx => tx.status === 'completed').length;
+  const [errorMessage , setErrorMessage] = useState('');
 
-  // Use Effect function cal
+
+  // Use Effect function called when the component mounts to fetch data from the API and transform it into the desired format for transactions
 useEffect(()=> {
 
   async function  fetchData() {
     const response = await fetch(api_URL_endpoint);
-    const data = await response.json();
-
-
-    const transformed = data.splice(0,10).map(item => ({
-      date: new Date(),
-      otherParty: item.title,
-      amount: Math.floor(Math.random() * 1000),
-      status: ['pending', 'completed', 'failed'][Math.floor(Math.random() * 3)]
+    if(response.status == 200) {
+          const data = await response.json();
+          const transformed = data.splice(0,10).map(item => ({
+          date: new Date(),
+          otherParty: item.title,
+          amount: Math.floor(Math.random() * 1000),
+          status: ['pending', 'completed', 'failed'][Math.floor(Math.random() * 3)]
     }));
+    
     setTransactions(transformed);
+    }else{
+      setErrorMessage('Failed to fetch transactions. Connection Lost.');
+       
+      return;
+    }
 
   }
   fetchData();
@@ -35,6 +44,7 @@ useEffect(()=> {
     <div>
       <h2>Transactional Table</h2>
       <h3 className='text-success'>Total Processed: <span className='text-success'>{totalProcessed}</span> </h3>
+      {errorMessage && <div className='alert alert-danger'>{errorMessage}</div>}
 
     
       <table className="table">
