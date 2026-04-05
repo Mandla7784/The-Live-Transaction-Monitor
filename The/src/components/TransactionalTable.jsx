@@ -1,10 +1,19 @@
 import React from 'react';
 import mockTransactions from './mockData';
 import TotalProcessed from './TotalProcessed';
+import { useEffect } from 'react';
+
+const api_URL_endpoint  = 'https://jsonplaceholder.typicode.com/posts';
+
+
+
+
+
 console.log(mockTransactions);
 
 
 function TransactionalTable() {
+  
 
     const transactions = mockTransactions;
     const totalProcessed = transactions.filter(tx => tx.status === 'completed').length;
