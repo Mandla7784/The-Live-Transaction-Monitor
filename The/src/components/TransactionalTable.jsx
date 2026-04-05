@@ -29,9 +29,6 @@ function TransactionalTable() {
                   {transaction.status}
                 </span>
               
-
-
-
               </td>
             </tr>
           ))}
