@@ -15,20 +15,16 @@ useEffect(()=> {
   async function  fetchData() {
     const response = await fetch(api_URL_endpoint);
     const data = await response.json();
-    console.log('Fetched Data:', data);
-    console.log(data);
 
-    const transformed = data.splice(0,20).map(item => ({
+
+    const transformed = data.splice(0,10).map(item => ({
       date: new Date(),
       otherParty: item.title,
       amount: Math.floor(Math.random() * 1000),
       status: ['pending', 'completed', 'failed'][Math.floor(Math.random() * 3)]
     }));
-
-    console.log(transformed);
     setTransactions(transformed);
 
-    
   }
   fetchData();
 } , [])
@@ -52,7 +48,7 @@ useEffect(()=> {
         </thead>
         <tbody>
           {/* I will Render transaction rows here */}
-          {mockTransactions.map((transaction, index) => (
+          {transactions.map((transaction, index) => (
             <tr key={index}>
               <td>{transaction.date.toLocaleDateString()}</td>
               <td>{transaction.otherParty}</td>
