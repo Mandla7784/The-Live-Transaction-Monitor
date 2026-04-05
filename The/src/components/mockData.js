@@ -1,4 +1,4 @@
-export  const mockTransactions = [
+ const mockTransactions = [
   {
     date: new Date("2022-01-01"),
     otherParty: "John Doe",
@@ -18,3 +18,5 @@ export  const mockTransactions = [
     status: "failed"
   },
 ];
+
+export default mockTransactions

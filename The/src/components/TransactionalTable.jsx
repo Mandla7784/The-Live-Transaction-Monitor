@@ -19,6 +19,14 @@ function TransactionalTable() {
         </thead>
         <tbody>
           {/* I will Render transaction rows here */}
+          {mockTransactions.map((transaction, index) => (
+            <tr key={index}>
+              <td>{transaction.date.toLocaleDateString()}</td>
+              <td>{transaction.otherParty}</td>
+              <td>{transaction.amount}</td>
+              <td>{transaction.status}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>

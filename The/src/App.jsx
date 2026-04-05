@@ -1,7 +1,7 @@
 
 import './App.css';
 import Navbar from './components/Navbar';
-
+import TransactionalTable from './components/TransactionalTable';
 
 function App() {
 
@@ -10,6 +10,7 @@ function App() {
     <div>
       <Navbar />
     <div className="container mt-5">
+      <TransactionalTable />
    
       <button className="btn btn-primary">Add Transaction </button>
     </div>
