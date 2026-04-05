@@ -24,7 +24,7 @@ useEffect(()=> {
           const data = await response.json();
           const transformed = data.splice(0,10).map(item => ({
           date: new Date(),
-          otherParty: item.title,
+          otherParty: item.title.slice(0,20),
           amount: Math.floor(Math.random() * 1000),
           status: ['pending', 'completed', 'failed'][Math.floor(Math.random() * 3)]
     }));
