@@ -2,6 +2,7 @@ import React from 'react';
 import { FaUser } from 'react-icons/fa';
 import { MdDarkMode, MdLightMode } from 'react-icons/md';
 import { useTheme } from './ThemeContext';
+
 import './Navbar.css';
 
 function Navbar(){
@@ -18,15 +19,11 @@ function Navbar(){
             <ul className="nav-links">
                 <li><a href="#">Analysis </a></li>
                 <li><a href="#">Revenue</a></li>
-                 
-              <div className="search-container">
-                    <i className="bi bi-search search-icon"></i>
-                    <input
-                        type="text"
-                        className="search-bar"
-                        placeholder="Search transactions..."
-                    />
-                    </div>
+
+
+                
+            
+          
 
 
             </ul>
