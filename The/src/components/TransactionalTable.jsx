@@ -8,7 +8,7 @@ const api_URL_endpoint  = 'https://jsonplaceholder.typicode.com/posts';
 console.log(mockTransactions);
 
 
-function TransactionalTable( { data } ) {
+function TransactionalTable() {
   const {query } = useContext(SearchContext)
   const [transactions, setTransactions] = useState([]);
   const totalProcessed = transactions.filter(tx => tx.status === 'completed').length;
@@ -24,7 +24,7 @@ useEffect(()=> {
     if(response.status == 200) {
           const data = await response.json();
           const transformedAndFiltered = data.splice(0,10).map(item => ({
-            id: item.id.toLocaleString().include(query) ? item.id : null,
+          id: item.id.toString().includes(query) ? item.id : null,
           date: new Date(),
           otherParty: item.title.slice(0,20),
           amount: Math.floor(Math.random() * 1000),
