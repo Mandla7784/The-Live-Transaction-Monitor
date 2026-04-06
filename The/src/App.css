@@ -1,13 +1,12 @@
 
 .nav-item a {
     color: white !important;
-
 }
-
 
 .search-container {
   position: relative;
   width: 300px;
+  max-width: 100%;
 }
 
 .search-bar {
@@ -27,8 +26,6 @@
   width: 100%;
   background: transparent;
   font-size: 14px;
-  
-
 }
 
 .search-bar:focus {
@@ -44,4 +41,36 @@
   transform: translateY(-50%);
   color: #e9edf1;
   font-size: 14px;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .container.mt-5 {
+    padding: 0 0.75rem;
+    margin-top: 1rem !important;
+  }
+
+  .search-container {
+    width: 100%;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .table {
+    font-size: 0.8rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .table th:first-child,
+  .table td:first-child {
+    display: none;
+  }
 }
