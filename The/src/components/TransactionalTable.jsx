@@ -29,7 +29,7 @@ useEffect(()=> {
           otherParty: item.title.slice(0,20),
           amount: Math.floor(Math.random() * 1000),
           status: ['pending', 'completed', 'failed'][Math.floor(Math.random() * 3)]
-    }));
+    })); 
 
 
     
