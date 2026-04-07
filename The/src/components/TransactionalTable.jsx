@@ -52,6 +52,17 @@ useEffect(()=> {
       <h3 className='text-success'>Total Processed: <span className='text-success'>{totalProcessed}</span> </h3>
       {errorMessage && <div className='alert alert-danger'>{errorMessage}</div>}
 
+           <div className="container mt-5">
+      <div className="row">
+        <div className="col-md-4">
+          <TotalProcessed transactions={transactions} />
+        </div>
+      </div>
+    </div>
+
+
+
+
     
       <table className="table">
         <thead>
@@ -79,13 +90,6 @@ useEffect(()=> {
           ))}
         </tbody>
       </table>
-<div className="container mt-5">
-      <div className="row">
-        <div className="col-md-4">
-          <TotalProcessed transactions={transactions} />
-        </div>
-      </div>
-    </div>
 
 
 
